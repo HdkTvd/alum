@@ -1,9 +1,11 @@
-$("a[href^='#']").click(function(e) {
-	e.preventDefault();
+$(document).ready(function(){
+	$("a[href^='#']").click(function(e) {
+		e.preventDefault();
+		
+		var position = $($(this).attr("href")).offset().top;
 	
-	var position = $($(this).attr("href")).offset().top;
-
-	$("body, html").animate({
-		scrollTop: position
-	} ,'slow','easein');
+		$("body, html").animate({
+			scrollTop: position
+		} ,500);
+	});
 });
